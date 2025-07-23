@@ -1,3 +1,45 @@
-build/bin
-node_modules
-frontend/dist
+# Go build artifacts
+/bin/
+build
+/dist/
+/*.exe
+/*.out
+/*.test
+
+# Wails build folders
+wailsjs/
+app/frontend/node_modules/
+frontend/node_modules/
+
+# Dependency / cache / lockfiles
+**/node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment / config
+.env
+.env.*
+
+# Coverage / test artifacts
+coverage/
+*.lcov
+
+# Build-time caches
+.wails-build-cache/
