@@ -1,12 +1,15 @@
 package models
 
-import "time"
+import (
+	"time"
+)
 
 type ItemType string
 type itemTypeValues struct {
 	Text  ItemType
 	Code  ItemType
 	URL   ItemType
+	Email ItemType
 	File  ItemType
 	Image ItemType
 	Video ItemType
@@ -16,6 +19,7 @@ var ItemTypes = itemTypeValues{
 	Text:  "text",
 	Code:  "code",
 	URL:   "url",
+	Email: "email",
 	File:  "file",
 	Image: "image",
 	Video: "video",

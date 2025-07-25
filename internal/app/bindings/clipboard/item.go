@@ -1,6 +1,8 @@
 package bindings
 
 import (
+	database "Pastely/internal/db"
+	database_tables "Pastely/internal/db/tables"
 	models "Pastely/pkg/models/clipboard"
 	"context"
 )
@@ -36,7 +38,13 @@ func (c *ClipboardItem) ListItems(offset, limit int) ([]models.Item, error) {
 	if limit <= 0 {
 		limit = 100
 	}
-	return nil, nil // Replace with actual implementation
+
+	items, err := database_tables.ListItems(database.DB, offset, limit)
+	if err != nil {
+		return nil, err
+	}
+
+	return items, nil
 }
 
 func (c *ClipboardItem) DeleteItem(id int64) error {

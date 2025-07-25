@@ -3,6 +3,7 @@ module Pastely
 go 1.23.0
 
 require (
+	github.com/atotto/clipboard v0.1.4
 	github.com/robotn/gohook v0.42.2
 	github.com/wailsapp/wails/v2 v2.10.2
 	modernc.org/sqlite v1.38.0

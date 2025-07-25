@@ -5,6 +5,7 @@ import (
 	bindings_clipboard "Pastely/internal/app/bindings/clipboard"
 	bindings_folder "Pastely/internal/app/bindings/folder"
 	bindings_tag "Pastely/internal/app/bindings/tag"
+	"Pastely/internal/core/clipboard"
 	database "Pastely/internal/db"
 	"Pastely/internal/hotkeys"
 
@@ -35,8 +36,10 @@ func main() {
 	}
 
 	app := app.NewApp()
+	clipboardWatcher := clipboard.NewWatcher()
 	services := []WailsService{
 		app,
+		clipboardWatcher,
 		&bindings_clipboard.ClipboardItem{},
 		&bindings_folder.Folder{},
 		&bindings_tag.Tag{},
@@ -50,7 +53,7 @@ func main() {
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},
-		Frameless:         true,
+		Frameless:         false,
 		HideWindowOnClose: true,
 		StartHidden:       true,
 		BackgroundColour:  &options.RGBA{R: 27, G: 38, B: 54, A: 1},

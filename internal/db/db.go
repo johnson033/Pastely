@@ -18,7 +18,8 @@ func Init(appName string, dbName string) error {
 	dbPath := getDBPath(appName, dbName)
 	createDBPath(dbPath)
 
-	DB, err := sql.Open("sqlite", dbPath)
+	var err error
+	DB, err = sql.Open("sqlite", dbPath)
 	if err != nil {
 		log.Fatal(err)
 	}

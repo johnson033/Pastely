@@ -1,0 +1,8 @@
+.Item{
+    padding: 20px; 
+    background-color: var(--FG); 
+    width: 200px; 
+    height: 200px; 
+    border-radius: 8px;
+    cursor: pointer;
+}

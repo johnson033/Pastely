@@ -1,0 +1,12 @@
+:root{
+  --BG: #edf3f2; 
+  --FG: #cecece; 
+}
+
+html{
+  background-color: var(--BG); 
+}
+
+body{
+  background-color: var(--BG); 
+}
